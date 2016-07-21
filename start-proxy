@@ -2,14 +2,9 @@
 
 app \
     -provider=github \
-    -upstream=http://10.0.75.2/ \
-    -client-id=4db36f11db1b2c5cab43 \
-    -cookie-httponly=true \
-    -client-secret=222fd8449665413651124f88720f61fac84c38c6 \
-    -cookie-secret=foo \
-    -cookie-secure=true \
+    -upstream=$UPSTREAM_URL \
     --tls-cert=/usr/local/etc/server.crt \
     --tls-key=/usr/local/etc/server.key \
     -email-domain=* \
     -github-org=advizex \
-    -github-team=two-factor-auth
+    -github-team=${OAUTH_PROXY_GITHUB_TEAM:-two-factor-auth}
